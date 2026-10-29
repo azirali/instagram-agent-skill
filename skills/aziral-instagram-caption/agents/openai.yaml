@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZIRAL Instagram Caption"
+  short_description: "Write and review RU, EN and KK Instagram copy"
+  default_prompt: "Use $aziral-instagram-caption to adapt this verified product update into RU, EN and KK captions."

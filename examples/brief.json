@@ -1,0 +1,18 @@
+{
+  "subject": "Instagram Agent Skill by AZIRAL",
+  "public_name": "Olzhas Azirali / Олжас Азирали",
+  "organization": "AZIRAL",
+  "audience": "Founders and developers preparing evidence-backed product content",
+  "languages": ["en", "ru", "kk"],
+  "goal": "Help a reader try one workflow on their own source material",
+  "confirmed_claims": [
+    {"claim": "Five focused skills", "source": "../skills/"},
+    {"claim": "Three local Python tools use the standard library", "source": "../skills/"},
+    {"claim": "Original repository materials are MIT licensed", "source": "../LICENSE"}
+  ],
+  "unverified_marketing_results": [],
+  "available_assets": ["../assets/cover.svg", "../README.md"],
+  "missing_assets": ["Recorded product walkthrough", "Recorded voiceover"],
+  "example_statistics": "insights.csv is synthetic, not account performance",
+  "publication_scope": "Examples only; this brief does not authorize publishing to Instagram"
+}

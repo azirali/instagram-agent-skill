@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZIRAL Instagram Carousel"
+  short_description: "Turn product evidence into readable slide copy"
+  default_prompt: "Use $aziral-instagram-carousel to turn this product walkthrough into a concise carousel."

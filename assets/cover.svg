@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Instagram Agent Skill by AZIRAL</title>
+  <desc id="desc">Five workflows: plan, reel, caption, carousel and insights. English, Russian and Kazakh. Local tools, original MIT work.</desc>
+  <rect width="1280" height="640" rx="24" fill="#111412"/>
+  <path d="M880 0h400v640H880z" fill="#1a211b"/>
+  <g fill="none" stroke="#344236" opacity=".7">
+    <path d="M880 80h400M880 160h400M880 240h400M880 320h400M880 400h400M880 480h400M880 560h400M960 0v640M1040 0v640M1120 0v640M1200 0v640"/>
+  </g>
+  <rect x="64" y="56" width="112" height="34" rx="17" fill="#caff70"/>
+  <text x="120" y="79" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#111412" letter-spacing="2">AZIRAL</text>
+  <text x="196" y="79" font-family="Arial,sans-serif" font-size="16" fill="#c4cbbf" letter-spacing="2">AGENT WORKFLOWS / 01</text>
+  <g font-family="Arial,sans-serif" font-weight="700" fill="#f4f3e9" font-size="82" letter-spacing="-3">
+    <text x="60" y="222">Instagram</text>
+    <text x="60" y="309">Agent Skill</text>
+  </g>
+  <text x="64" y="364" font-family="Arial,sans-serif" font-size="24" fill="#c4cbbf">From real product evidence to useful content.</text>
+  <g font-family="Arial,sans-serif" font-size="18" fill="#f4f3e9">
+    <text x="64" y="448">01 PLAN</text><text x="240" y="448">02 REEL</text><text x="417" y="448">03 CAPTION</text>
+    <text x="64" y="488">04 CAROUSEL</text><text x="300" y="488">05 INSIGHTS</text>
+  </g>
+  <path d="M64 534h732" stroke="#3d473d"/>
+  <text x="64" y="578" font-family="Arial,sans-serif" font-size="18" fill="#caff70">EN / RU / KK</text>
+  <text x="264" y="578" font-family="Arial,sans-serif" font-size="18" fill="#c4cbbf">LOCAL PYTHON TOOLS</text>
+  <text x="648" y="578" font-family="Arial,sans-serif" font-size="18" fill="#c4cbbf">MIT LICENSE</text>
+  <g transform="translate(936 156) rotate(5 120 150)">
+    <rect width="232" height="318" rx="28" fill="#caff70"/>
+    <rect x="18" y="18" width="196" height="212" rx="16" fill="#111412"/>
+    <path d="m91 73 72 51-72 51z" fill="#caff70"/>
+    <path d="M42 258h148M42 279h94" stroke="#111412" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <text x="998" y="535" font-family="Arial,sans-serif" font-size="16" fill="#c4cbbf" letter-spacing="1">BUILT BY AZIRAL</text>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZIRAL Instagram Plan"
+  short_description: "Plan evidence-backed founder and product content"
+  default_prompt: "Use $aziral-instagram-plan to prepare a feasible weekly content plan from my product brief."

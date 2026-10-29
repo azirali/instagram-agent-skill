@@ -1,0 +1,7 @@
+One idea needs more than a word-for-word translation to work in three languages.
+
+AZIRAL's Instagram Agent Skill includes five workflows: planning, Reels, captions, carousels and insights. Local Python tools check text, estimate spoken timing and analyze supplied CSV metrics.
+
+The toolkit is open source under MIT. Explore the examples on GitHub.
+
+#AgentSkills #OpenSource #AZIRAL

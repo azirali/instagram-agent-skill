@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZIRAL Instagram Reel"
+  short_description: "Script product Reels with multilingual timing"
+  default_prompt: "Use $aziral-instagram-reel to storyboard a product demo in English, Russian and Kazakh."

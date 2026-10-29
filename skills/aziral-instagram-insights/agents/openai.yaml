@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZIRAL Instagram Insights"
+  short_description: "Review supplied post metrics with honest ratios"
+  default_prompt: "Use $aziral-instagram-insights to compare this CSV by format and suggest one content experiment."

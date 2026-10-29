@@ -1,0 +1,4 @@
+hook | A caption that works in English can sound awkward after a direct translation.
+demo | This AZIRAL toolkit helps prepare separate English, Russian and Kazakh versions.
+proof | Local tools review text, estimate spoken timing and keep missing statistics visible.
+cta | Open the examples and try one workflow on your own material.
