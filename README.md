@@ -77,6 +77,13 @@ The CSV in `examples/` is **synthetic test data**, including zero and missing ob
 
 No virality guarantee, AI-detection score, engagement bot, scraping system or automatic publishing is included. External actions follow the user's actual authorization; requesting a draft does not authorize outreach, account changes or paid production. Platform constraints change, so verify them for the intended account and surface when publishing.
 
+## Demo and walkthrough
+
+Watch the [36-second silent demo](https://aziral.com/media/instagram-agent-skill/demo.mp4), or use the [vertical version](https://aziral.com/media/instagram-agent-skill/demo-vertical.mp4). The AI-assisted animation uses actual CLI output; the analytics data are synthetic examples and speech timing is an estimate.
+
+- [English technical walkthrough on Medium](https://medium.com/@olzasazirali/unicode-safe-content-tools-for-english-russian-and-kazakh-769024c567f3)
+- [Russian case study by Olzhas Azirali](https://aziral.com/blog/instagram-agent-skill-aziral-unicode-ru-en-kk)
+
 ## Development
 
 ```sh

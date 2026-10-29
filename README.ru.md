@@ -56,6 +56,13 @@ python3 -m unittest discover -s tests -v
 
 Данные [примера CSV](examples/insights.csv) синтетические. Это не показатели аккаунта AZIRAL. [Примеры текстов](examples) показывают возможности набора; готовые изображения и видео в него не входят.
 
+## Демо и разбор
+
+[Демо на 36 секунд без звука](https://aziral.com/media/instagram-agent-skill/demo.mp4) и [вертикальная версия](https://aziral.com/media/instagram-agent-skill/demo-vertical.mp4) показывают реальный вывод CLI. Анимация подготовлена с помощью AI; данные статистики синтетические, время речи приблизительное.
+
+- [Разбор Олжаса Азирали на русском](https://aziral.com/blog/instagram-agent-skill-aziral-unicode-ru-en-kk)
+- [Техническая статья на английском в Medium](https://medium.com/@olzasazirali/unicode-safe-content-tools-for-english-russian-and-kazakh-769024c567f3)
+
 ## Авторство и лицензия
 
 Самостоятельная работа **Олжаса Азирали / AZIRAL**, [MIT](LICENSE). Источник вдохновения - [проект Jake Schincariol](https://github.com/Jakeschincariol/instagram-agent-skill). Его файлы, формулы, оценки и исследования не включены. Подробности в [NOTICE.md](NOTICE.md). Связи или одобрения со стороны исходного автора, Instagram или Meta нет.

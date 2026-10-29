@@ -57,6 +57,13 @@ python3 -m unittest discover -s tests -v
 
 [CSV үлгісі](examples/insights.csv) - синтетикалық тест деректері, AZIRAL аккаунтының нәтижелері емес. [Мәтін үлгілері](examples) жинақтың мүмкіндіктерін көрсетеді, дайын видео немесе сурет болып саналмайды.
 
+## Демо және талдау
+
+[36 секундтық дыбыссыз демо](https://aziral.com/media/instagram-agent-skill/demo.mp4) және [тік форматтағы нұсқа](https://aziral.com/media/instagram-agent-skill/demo-vertical.mp4) CLI құралдарының нақты нәтижелерін көрсетеді. Анимация AI көмегімен дайындалды; статистика деректері синтетикалық, сөйлеу уақыты шамамен есептеледі.
+
+- [Олжас Азиралидің талдауы (орысша)](https://aziral.com/blog/instagram-agent-skill-aziral-unicode-ru-en-kk)
+- [Medium техникалық мақаласы (ағылшынша)](https://medium.com/@olzasazirali/unicode-safe-content-tools-for-english-russian-and-kazakh-769024c567f3)
+
 ## Автор және лицензия
 
 **Олжас Азирали / AZIRAL** жасаған дербес жұмыс. [MIT лицензиясы](LICENSE).
