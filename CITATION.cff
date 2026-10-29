@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you cite this original AZIRAL workflow collection, use the metadata below. Cite external tools separately when appropriate."
+type: software
+title: "Instagram Agent Skill by AZIRAL"
+authors:
+  - given-names: "Olzhas"
+    family-names: "Azirali"
+    affiliation: "AZIRAL"
+    website: "https://aziral.com/en/olzhas-azirali"
+license: "MIT"
+repository-code: "https://github.com/azirali/instagram-agent-skill"
+url: "https://github.com/azirali/instagram-agent-skill"
+abstract: "Original AZIRAL agent workflows and local Python tools for multilingual Instagram content preparation and supplied CSV review. Inspired by Jake Schincariol's packaging idea, with no affiliation to Instagram or Meta."
+keywords:
+  - "agent skills"
+  - "Unicode"
+  - "multilingual content"
+  - "Python"
