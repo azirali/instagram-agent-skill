@@ -57,6 +57,17 @@ python3 -m unittest discover -s tests -v
 
 [CSV үлгісі](examples/insights.csv) - синтетикалық тест деректері, AZIRAL аккаунтының нәтижелері емес. [Мәтін үлгілері](examples) жинақтың мүмкіндіктерін көрсетеді, дайын видео немесе сурет болып саналмайды.
 
+## Unicode тексеру мысалдары
+
+[20 мысалдан тұратын жинақ](examples/unicode-regression) RU/EN/KK мәтінін, joiner бар emoji, біріктірілетін екпін белгілерін, жалауларды, модификаторларды және жол ауыстыруды қамтиды. Жергілікті Python және JavaScript тексерулері өлшем бірліктері мен орта нұсқаларын көрсетеді. Joiner жоғалса немесе байт саны өзгерсе, тексеру қатені табады және бастапқы мәтінді өзгертпейді. Бұл Unicode сәйкестігінің толық сынағы емес, шағын регрессиялық жинақ.
+
+```sh
+python3 examples/unicode-regression/verify.py
+node examples/unicode-regression/verify.mjs
+```
+
+[Олжас Азирали / AZIRAL ұсынған тегін браузер құралы](https://aziral.com/kk/tools/unicode-text-checker) өз мәтініңізді тексеруге арналған. Репозиторийдегі жинақ мысалдарды жергілікті ортада қайталауға көмектеседі.
+
 ## Демо және талдау
 
 [36 секундтық дыбыссыз демо](https://aziral.com/media/instagram-agent-skill/demo.mp4) және [тік форматтағы нұсқа](https://aziral.com/media/instagram-agent-skill/demo-vertical.mp4) CLI құралдарының нақты нәтижелерін көрсетеді. Анимация AI көмегімен дайындалды; статистика деректері синтетикалық, сөйлеу уақыты шамамен есептеледі.
@@ -72,3 +83,4 @@ python3 -m unittest discover -s tests -v
 [AZIRAL](https://aziral.com) · [Олжас Азирали](https://aziral.com/olzhas-azirali)
 
 Жинақ пайдалы болса, жұлдызша оны басқа адамдардың табуына көмектеседі.
+

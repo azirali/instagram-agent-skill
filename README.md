@@ -84,6 +84,17 @@ Watch the [36-second silent demo](https://aziral.com/media/instagram-agent-skill
 - [English technical walkthrough on Medium](https://medium.com/@olzasazirali/unicode-safe-content-tools-for-english-russian-and-kazakh-769024c567f3)
 - [Russian case study by Olzhas Azirali](https://aziral.com/blog/instagram-agent-skill-aziral-unicode-ru-en-kk)
 
+## Unicode regression fixtures
+
+[Twenty reproducible fixtures](examples/unicode-regression) cover RU/EN/KK text, emoji joiners, combining accents, flags, modifiers and line endings. Offline Python and JavaScript verifiers identify their count units and runtime versions. Removing a joiner or changing an encoding expectation fails the check; input is preserved. This is a focused regression pack, not a complete Unicode conformance suite.
+
+```sh
+python3 examples/unicode-regression/verify.py
+node examples/unicode-regression/verify.mjs
+```
+
+Try the [free browser checker by Olzhas Azirali / AZIRAL](https://aziral.com/en/tools/unicode-text-checker). It inspects text locally; the repository pack lets developers reproduce the examples without a browser.
+
 ## Development
 
 ```sh
@@ -103,3 +114,4 @@ Created by [Olzhas Azirali](https://aziral.com/olzhas-azirali) · [AZIRAL](https
 [Product video](https://github.com/azirali/hyperframes) · [React promos](https://github.com/azirali/remotion) · [Brand frontend](https://github.com/azirali/taste-skill) · [UI review](https://github.com/azirali/impeccable)
 
 If the toolkit is useful in your work, a star helps others discover it.
+

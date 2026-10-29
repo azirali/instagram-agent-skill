@@ -56,6 +56,17 @@ python3 -m unittest discover -s tests -v
 
 Данные [примера CSV](examples/insights.csv) синтетические. Это не показатели аккаунта AZIRAL. [Примеры текстов](examples) показывают возможности набора; готовые изображения и видео в него не входят.
 
+## Проверяемые примеры Unicode
+
+[Набор из 20 примеров](examples/unicode-regression) покрывает RU/EN/KK, emoji с joiner, комбинируемые акценты, флаги, модификаторы и переносы строк. Локальные Python- и JavaScript-проверки указывают единицы подсчёта и версии среды. Потеря joiner или неверное число байтов выявляются без изменения исходника. Это небольшой регрессионный набор, а не полный тест соответствия Unicode.
+
+```sh
+python3 examples/unicode-regression/verify.py
+node examples/unicode-regression/verify.mjs
+```
+
+[Бесплатный браузерный инструмент Олжаса Азирали / AZIRAL](https://aziral.com/tools/unicode-text-checker) позволяет проверить свой текст. Набор в репозитории помогает воспроизвести примеры локально.
+
 ## Демо и разбор
 
 [Демо на 36 секунд без звука](https://aziral.com/media/instagram-agent-skill/demo.mp4) и [вертикальная версия](https://aziral.com/media/instagram-agent-skill/demo-vertical.mp4) показывают реальный вывод CLI. Анимация подготовлена с помощью AI; данные статистики синтетические, время речи приблизительное.
@@ -70,3 +81,4 @@ python3 -m unittest discover -s tests -v
 [AZIRAL](https://aziral.com) · [Олжас Азирали](https://aziral.com/olzhas-azirali) · [Все навыки и инструкции](README.md)
 
 Если набор пригодился, звезда помогает другим его найти.
+

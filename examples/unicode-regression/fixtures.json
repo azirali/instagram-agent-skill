@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "title": "Unicode regression fixtures by Olzhas Azirali / AZIRAL",
+  "author": {
+    "name": "Olzhas Azirali",
+    "organization": "AZIRAL",
+    "url": "https://aziral.com/en/olzhas-azirali"
+  },
+  "license": "MIT - see the repository LICENSE",
+  "measurementPolicy": {
+    "input": "Unicode scalar values only; unpaired surrogates are outside this pack",
+    "normalization": "none",
+    "wordCount": "not measured",
+    "glyphCount": "not measured",
+    "graphemeCount": "Observed Intl.Segmenter grapheme count in the recorded reference runtime, not a visual-width guarantee"
+  },
+  "referenceRuntime": {
+    "javascript": {
+      "node": "26.8.2",
+      "v8": "14.6.202.34-node.28",
+      "unicode": "17.0",
+      "icu": "78.3",
+      "cldr": "48.0",
+      "segmenter": {
+        "locale": "en",
+        "granularity": "grapheme"
+      }
+    },
+    "python": {
+      "version": "3.14.7",
+      "unicodeDatabase": "16.0.0"
+    }
+  },
+  "limitations": [
+    "This is a focused regression set, not the complete Unicode conformance test suite.",
+    "Grapheme segmentation can change with Unicode and ICU versions; investigate mismatches rather than silently regenerating expectations.",
+    "A grapheme cluster does not promise one font glyph, one visual width or identical rendering on every device.",
+    "No linguistic word model, translation quality score, platform character limit or reading-time estimate is supplied.",
+    "Raw source text and codePointsHex must stay consistent; no cleaning or normalization is performed."
+  ],
+  "sources": [
+    "https://www.unicode.org/reports/tr29/",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter",
+    "https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str"
+  ],
+  "fixtures": [
+    {
+      "id": "empty",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Empty input is a valid boundary case.",
+      "text": "",
+      "codePointsHex": [],
+      "expected": {
+        "codePoints": 0,
+        "utf8Bytes": 0,
+        "utf16CodeUnits": 0,
+        "graphemeClusters": 0
+      }
+    },
+    {
+      "id": "english-ascii",
+      "languages": [
+        "en"
+      ],
+      "scenario": "Basic English punctuation and spaces.",
+      "text": "Build apps.",
+      "codePointsHex": [
+        "U+0042",
+        "U+0075",
+        "U+0069",
+        "U+006C",
+        "U+0064",
+        "U+0020",
+        "U+0061",
+        "U+0070",
+        "U+0070",
+        "U+0073",
+        "U+002E"
+      ],
+      "expected": {
+        "codePoints": 11,
+        "utf8Bytes": 11,
+        "utf16CodeUnits": 11,
+        "graphemeClusters": 11
+      }
+    },
+    {
+      "id": "russian-greeting",
+      "languages": [
+        "ru"
+      ],
+      "scenario": "Cyrillic letters consume multiple UTF-8 bytes.",
+      "text": "Привет, мир!",
+      "codePointsHex": [
+        "U+041F",
+        "U+0440",
+        "U+0438",
+        "U+0432",
+        "U+0435",
+        "U+0442",
+        "U+002C",
+        "U+0020",
+        "U+043C",
+        "U+0438",
+        "U+0440",
+        "U+0021"
+      ],
+      "expected": {
+        "codePoints": 12,
+        "utf8Bytes": 21,
+        "utf16CodeUnits": 12,
+        "graphemeClusters": 12
+      }
+    },
+    {
+      "id": "kazakh-word",
+      "languages": [
+        "kk"
+      ],
+      "scenario": "Kazakh text should not be filtered as non-English.",
+      "text": "Қазақша",
+      "codePointsHex": [
+        "U+049A",
+        "U+0430",
+        "U+0437",
+        "U+0430",
+        "U+049B",
+        "U+0448",
+        "U+0430"
+      ],
+      "expected": {
+        "codePoints": 7,
+        "utf8Bytes": 14,
+        "utf16CodeUnits": 7,
+        "graphemeClusters": 7
+      }
+    },
+    {
+      "id": "kazakh-uppercase",
+      "languages": [
+        "kk"
+      ],
+      "scenario": "Nine distinctive uppercase Kazakh Cyrillic letters.",
+      "text": "ӘҒҚҢӨҰҮҺІ",
+      "codePointsHex": [
+        "U+04D8",
+        "U+0492",
+        "U+049A",
+        "U+04A2",
+        "U+04E8",
+        "U+04B0",
+        "U+04AE",
+        "U+04BA",
+        "U+0406"
+      ],
+      "expected": {
+        "codePoints": 9,
+        "utf8Bytes": 18,
+        "utf16CodeUnits": 9,
+        "graphemeClusters": 9
+      }
+    },
+    {
+      "id": "kazakh-lowercase",
+      "languages": [
+        "kk"
+      ],
+      "scenario": "The corresponding lowercase letters remain ordinary text.",
+      "text": "әғқңөұүһі",
+      "codePointsHex": [
+        "U+04D9",
+        "U+0493",
+        "U+049B",
+        "U+04A3",
+        "U+04E9",
+        "U+04B1",
+        "U+04AF",
+        "U+04BB",
+        "U+0456"
+      ],
+      "expected": {
+        "codePoints": 9,
+        "utf8Bytes": 18,
+        "utf16CodeUnits": 9,
+        "graphemeClusters": 9
+      }
+    },
+    {
+      "id": "accent-composed",
+      "languages": [
+        "en"
+      ],
+      "scenario": "Precomposed accent; compare accent-decomposed without normalizing.",
+      "text": "café",
+      "codePointsHex": [
+        "U+0063",
+        "U+0061",
+        "U+0066",
+        "U+00E9"
+      ],
+      "expected": {
+        "codePoints": 4,
+        "utf8Bytes": 5,
+        "utf16CodeUnits": 4,
+        "graphemeClusters": 4
+      }
+    },
+    {
+      "id": "accent-decomposed",
+      "languages": [
+        "en"
+      ],
+      "scenario": "Combining accent changes representation, not the reference grapheme count.",
+      "text": "café",
+      "codePointsHex": [
+        "U+0063",
+        "U+0061",
+        "U+0066",
+        "U+0065",
+        "U+0301"
+      ],
+      "expected": {
+        "codePoints": 5,
+        "utf8Bytes": 6,
+        "utf16CodeUnits": 5,
+        "graphemeClusters": 4
+      }
+    },
+    {
+      "id": "emoji-single",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "One supplementary-plane scalar occupies two UTF-16 code units.",
+      "text": "😀",
+      "codePointsHex": [
+        "U+1F600"
+      ],
+      "expected": {
+        "codePoints": 1,
+        "utf8Bytes": 4,
+        "utf16CodeUnits": 2,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "emoji-zwj",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Woman plus zero-width joiner plus laptop; preserve the joiner.",
+      "text": "👩‍💻",
+      "codePointsHex": [
+        "U+1F469",
+        "U+200D",
+        "U+1F4BB"
+      ],
+      "expected": {
+        "codePoints": 3,
+        "utf8Bytes": 11,
+        "utf16CodeUnits": 5,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "emoji-unjoined",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Removing the joiner changes the sequence and reference segmentation.",
+      "text": "👩💻",
+      "codePointsHex": [
+        "U+1F469",
+        "U+1F4BB"
+      ],
+      "expected": {
+        "codePoints": 2,
+        "utf8Bytes": 8,
+        "utf16CodeUnits": 4,
+        "graphemeClusters": 2
+      }
+    },
+    {
+      "id": "emoji-skin-tone",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "A modifier is another code point, not another reference grapheme.",
+      "text": "👍🏽",
+      "codePointsHex": [
+        "U+1F44D",
+        "U+1F3FD"
+      ],
+      "expected": {
+        "codePoints": 2,
+        "utf8Bytes": 8,
+        "utf16CodeUnits": 4,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "emoji-flag-kazakhstan",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Two regional indicators form the reference flag cluster.",
+      "text": "🇰🇿",
+      "codePointsHex": [
+        "U+1F1F0",
+        "U+1F1FF"
+      ],
+      "expected": {
+        "codePoints": 2,
+        "utf8Bytes": 8,
+        "utf16CodeUnits": 4,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "emoji-keycap",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Digit, variation selector and enclosing keycap remain intact.",
+      "text": "1️⃣",
+      "codePointsHex": [
+        "U+0031",
+        "U+FE0F",
+        "U+20E3"
+      ],
+      "expected": {
+        "codePoints": 3,
+        "utf8Bytes": 7,
+        "utf16CodeUnits": 3,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "emoji-family",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Multiple joiners remain part of a single reference cluster.",
+      "text": "👨‍👩‍👧‍👦",
+      "codePointsHex": [
+        "U+1F468",
+        "U+200D",
+        "U+1F469",
+        "U+200D",
+        "U+1F467",
+        "U+200D",
+        "U+1F466"
+      ],
+      "expected": {
+        "codePoints": 7,
+        "utf8Bytes": 25,
+        "utf16CodeUnits": 11,
+        "graphemeClusters": 1
+      }
+    },
+    {
+      "id": "line-feed",
+      "languages": [
+        "en",
+        "kk"
+      ],
+      "scenario": "The LF line break contributes to code-point and byte counts.",
+      "text": "one\nекі",
+      "codePointsHex": [
+        "U+006F",
+        "U+006E",
+        "U+0065",
+        "U+000A",
+        "U+0435",
+        "U+043A",
+        "U+0456"
+      ],
+      "expected": {
+        "codePoints": 7,
+        "utf8Bytes": 10,
+        "utf16CodeUnits": 7,
+        "graphemeClusters": 7
+      }
+    },
+    {
+      "id": "carriage-return-line-feed",
+      "languages": [
+        "en",
+        "kk"
+      ],
+      "scenario": "CRLF has two code points but one reference line-break cluster.",
+      "text": "one\r\nекі",
+      "codePointsHex": [
+        "U+006F",
+        "U+006E",
+        "U+0065",
+        "U+000D",
+        "U+000A",
+        "U+0435",
+        "U+043A",
+        "U+0456"
+      ],
+      "expected": {
+        "codePoints": 8,
+        "utf8Bytes": 11,
+        "utf16CodeUnits": 8,
+        "graphemeClusters": 7
+      }
+    },
+    {
+      "id": "non-ascii-spaces",
+      "languages": [
+        "en",
+        "ru",
+        "kk"
+      ],
+      "scenario": "Nonbreaking and thin spaces are counted and are not rewritten.",
+      "text": "RU EN KK",
+      "codePointsHex": [
+        "U+0052",
+        "U+0055",
+        "U+00A0",
+        "U+0045",
+        "U+004E",
+        "U+2009",
+        "U+004B",
+        "U+004B"
+      ],
+      "expected": {
+        "codePoints": 8,
+        "utf8Bytes": 11,
+        "utf16CodeUnits": 8,
+        "graphemeClusters": 8
+      }
+    },
+    {
+      "id": "zero-width-space",
+      "languages": [
+        "kk"
+      ],
+      "scenario": "An internal U+200B can deserve review while the input stays unchanged.",
+      "text": "Алма​ты",
+      "codePointsHex": [
+        "U+0410",
+        "U+043B",
+        "U+043C",
+        "U+0430",
+        "U+200B",
+        "U+0442",
+        "U+044B"
+      ],
+      "expected": {
+        "codePoints": 7,
+        "utf8Bytes": 15,
+        "utf16CodeUnits": 7,
+        "graphemeClusters": 7
+      }
+    },
+    {
+      "id": "bidi-isolates",
+      "languages": [
+        "en",
+        "kk"
+      ],
+      "scenario": "Directional isolates are retained as inspectable input.",
+      "text": "name ⁧Астана⁩",
+      "codePointsHex": [
+        "U+006E",
+        "U+0061",
+        "U+006D",
+        "U+0065",
+        "U+0020",
+        "U+2067",
+        "U+0410",
+        "U+0441",
+        "U+0442",
+        "U+0430",
+        "U+043D",
+        "U+0430",
+        "U+2069"
+      ],
+      "expected": {
+        "codePoints": 13,
+        "utf8Bytes": 23,
+        "utf16CodeUnits": 13,
+        "graphemeClusters": 13
+      }
+    }
+  ]
+}
